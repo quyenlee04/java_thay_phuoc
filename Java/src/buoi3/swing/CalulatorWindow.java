@@ -8,10 +8,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import buoi2.association.association;
+
 
 public class CalulatorWindow extends JFrame implements ActionListener {
     //tield
@@ -19,7 +20,7 @@ public class CalulatorWindow extends JFrame implements ActionListener {
     private JPanel jPanelRemote;
     private JLabel jLabelInput1Remote, jLabelInput2Remote, jLabelOuputRemote;
     private JTextField JTextFieldInput1Remote, JTextFieldInput2Remote, JTextFieldOuputRemote;
-    private JButton  addButtonRemote, subButtonRemote, mulButtonRemote, divButtonRemote, closeButton;
+    private JButton  addButtonRemote, subButtonRemote, mulButtonRemote, divButtonRemote, cancelButtonRemote;
 
 
     //funcition
@@ -62,6 +63,10 @@ public class CalulatorWindow extends JFrame implements ActionListener {
         divButtonRemote.addActionListener(this);
         jPanelRemote.add(divButtonRemote);
 
+        cancelButtonRemote = new JButton("Cancel");
+        cancelButtonRemote.addActionListener(this);
+        jPanelRemote.add(cancelButtonRemote);
+
         jPanelRemote.setBackground(Color.PINK);
 
     }
@@ -93,6 +98,19 @@ public class CalulatorWindow extends JFrame implements ActionListener {
         JTextFieldOuputRemote.setText("" + result);
         }
         
+        cancelButtonRemote.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                int confirmed = JOptionPane.showConfirmDialog(null, "Bạn có muốn thoát?", "Xác nhận thoát", JOptionPane.YES_NO_OPTION);
+
+                if(confirmed == JOptionPane.YES_NO_OPTION){
+                    System.exit(0);
+                }
+                
+            }
+            
+        });
 
     }
+
 }
