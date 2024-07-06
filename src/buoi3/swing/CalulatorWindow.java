@@ -3,8 +3,6 @@ package buoi3.swing;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -67,7 +65,7 @@ public class CalulatorWindow extends JFrame implements ActionListener {
         cancelButtonRemote.addActionListener(this);
         jPanelRemote.add(cancelButtonRemote);
 
-        jPanelRemote.setBackground(Color.PINK);
+        jPanelRemote.setBackground(Color.WHITE);
 
     }
     @Override
