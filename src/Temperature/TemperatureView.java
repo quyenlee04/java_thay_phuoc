@@ -31,15 +31,13 @@ public class TemperatureView extends JFrame implements Subscriber {
         this.commandProcessor = new CommandProcessor();
         model.subscribe(this);
         buildUI();
-}
-
-  
+} 
 
     private void buildUI() {
         setTitle("Temperature Converter");
         
         setSize(300, 200);
-        
+        setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -93,7 +91,6 @@ public class TemperatureView extends JFrame implements Subscriber {
         
         add(panel);
         pack();
-        setVisible(true);
     }
     private void convertCelsiusToFahrenheit() {
         double value = Double.parseDouble(celsiusJTextField.getText());
